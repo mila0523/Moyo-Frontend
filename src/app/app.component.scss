@@ -1,0 +1,103 @@
+.side-container {
+    min-width: 210px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 0 6px rgba(94, 94, 94, 0.151);
+    border-bottom-right-radius: 30px;
+    color: white;
+    padding: 0px 10px 0px 10px;
+}
+
+.toolbox {
+    background-color: #67ab3a;
+}
+
+.mr-3 {
+    padding-left: 15px;
+}
+
+.manage-icon {
+    display: flex;
+    align-items: center;
+    border-style: none;
+    padding: 5px;
+    color: white;
+    background-color: #67ab3a;
+    border-color: #67ab3a;
+}
+
+.manage-icon:hover {
+    color: #e1c10e;
+    transition: ease-in-out 0.2s;
+}
+
+.content-container {
+    background-color: rgb(224, 224, 224);
+    padding: 10px 1px 0px 1px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.router-outelet-div {
+    height: 91vh;
+    padding: 0px 15px 0px 15px;
+}
+
+.mat-cont {
+    background-color: rgb(224, 224, 224);
+}
+
+.mat-item:hover {
+    background-color: #8dc16a84;
+    transition: ease-in 0.2s;
+
+    span {
+        color: white;
+    }
+
+    i {
+        color: white;
+    }
+}
+
+.fa-sharp {
+    font-size: 20px;
+    padding: 1px;
+    font-weight: bold;
+    color: rgb(95, 95, 95);
+}
+
+//Start Dark Mode
+.dark-mode {
+    /* styles for dark mode */
+    background-color: rgb(22, 22, 12);
+
+}
+
+.dark-mode .side-container {
+    color: white;
+    border-right-style: solid;
+    border-right-color: #d8d8d8;
+    border-right-width: 0.5px;
+    background-color: #2a2a2a;
+}
+
+.dark-mode .mat-item {
+    span {
+        color: white;
+    }
+
+    i {
+        color: white;
+    }
+}
+
+.dark-mode .mat-cont {
+    background-color: #1c1e21;
+}
+
+.dark-mode .content-container {
+    background-color: #1c1e21;
+    color: #ffffff;
+}
+
+//End Dark mode

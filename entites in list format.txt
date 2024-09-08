@@ -1,0 +1,190 @@
+1. CustAddress
+----------------
+AddressId (primary key) int
+AddressLine1 varchar(255)
+Country varchar(255)
+CustomerId (foreign key) int
+StateProvince varchar(255)
+TownCity varchar(255)
+ZipCode varchar(255)
+
+2. Customer
+--------------
+CustomerId (primary key) int
+CreationStamp datetime
+CustomerRole varchar(255)
+DateOfBirth datetime
+Email varchar(255)
+FirstName varchar(255)
+IdentityNum varchar(255)
+LastName varchar(255)
+NormalizedUsername varchar(255)
+PassHash varchar(255)
+Phone varchar(255)
+SecurityKey varchar(255)
+
+3. CustomerContact
+-------------------
+ContactId (primary key) int
+CustomerId (foreign key) int
+Designation varchar(255)
+Email varchar(255)
+Name varchar(255)
+
+4. CustomerRole
+----------------
+RoleId (primary key) int
+Description varchar(255)
+RoleName varchar(255)
+
+5. CustomerType
+----------------
+TypeId (primary key) int
+Description varchar(255)
+TypeName varchar(255)
+
+6. EmpAddress
+--------------
+AddressId (primary key) int
+AddressLine1 varchar(255)
+Country varchar(255)
+EmployeeId (foreign key) int
+StateProvince varchar(255)
+TownCity varchar(255)
+ZipCode varchar(255)
+
+7. EmpRole
+-----------
+EmpRoleId (primary key) int
+Description varchar(255)
+EmpRoleName varchar(255)
+
+8. EmpSkill
+-----------
+SkillId (primary key) int
+Description varchar(255)
+SkillName varchar(255)
+
+9. Employee
+-------------
+EmployeeId (primary key) int
+CreationStamp datetime
+Email varchar(255)
+EmpRoleId (foreign key) int
+EmploymentDate datetime
+FirstName varchar(255)
+IdentityNum varchar(255)
+LastName varchar(255)
+NormalizedUsername varchar(255)
+PassHash varchar(255)
+PayDate datetime
+Phone varchar(255)
+SecurityKey varchar(255)
+SkillId (foreign key) int
+
+10. Invoice
+--------------
+InvoiceNum (primary key) int
+Amount decimal(10,2)
+CustomerId (foreign key) int
+Date datetime
+InvStatusId (foreign key) int
+ProjectId (foreign key) int
+
+11. InvoiceItem
+----------------
+ItemId (primary key) int
+InvoiceNum (foreign key) int
+LineTotal decimal(10,2)
+ProductServiceId (foreign key) int
+
+12. InvoiceStatus
+-----------------
+InvStatusId (primary key) int
+InvStatusName varchar(255)
+
+13. Payment
+-----------
+PaymentId (primary key) int
+Amount decimal(10,2)
+Date datetime
+InvoiceNum (foreign key) int
+PayStatusId (foreign key) int
+Reference varchar(255)
+
+14. PaymentStatus
+----------------
+PayStatusId (primary key) int
+Description varchar(255)
+PayStatusName varchar(255)
+
+15. Priority
+-----------
+PriorityId (primary key) int
+Description varchar(255)
+PriorityName varchar(255)
+
+16. ProductCategory
+-------------------
+ProductCategoryId (primary key) int
+Description varchar(255)
+Name varchar(255)
+
+17. ProductService
+------------------
+ProductServiceId (primary key) int
+Description varchar(255)
+Name varchar(255)
+Price decimal(10,2)
+ProductCategoryId (foreign key) int
+
+18. ProjStatus
+--------------
+ProjStatusId (primary key) int
+Description varchar(255)
+ProjStatusName varchar(255)
+
+19. Project
+-----------
+ProjectId (primary key) int
+CustomerId (foreign key) int
+Description varchar(255)
+EndDate datetime
+PriorityId (foreign key) int
+ProjStatusId (foreign key) int
+ProjectBudget decimal(10,2)
+ProjectCost decimal(10,2)
+ProjectName varchar(255)
+StartDate datetime
+
+20. ProjectTask
+----------------
+TaskId (primary key) int
+Description varchar(255)
+EndDate datetime
+ProjectId (foreign key) int
+StartDate datetime
+TaskName varchar(255)
+TaskStatusId (foreign key) int
+
+21. TaskStatus
+--------------
+TaskStatusId (primary key) int
+Description varchar(255)
+TaskStatusName varchar(255)
+
+22. TeamMember
+---------------
+TeamMemberId (primary key) int
+AssignmentDate datetime
+EmployeeId (foreign key) int
+MemberRoleId (foreign key) int
+ProjectId (foreign key) int
+TaskId (foreign key) int
+TeamMemberRoleId (foreign key) int
+
+23. TeamMemberRole
+------------------
+MemberRoleId (primary key) int
+Description varchar(255)
+MemberRoleName varchar(255)

@@ -1,0 +1,51 @@
+<mat-toolbar color="primary" class="toolbox" *ngIf="isLoggedIn">
+  <mat-toolbar-row class="toolbar">
+    <button mat-icon-button mat-sidenav-toggle (click)="toggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h4><i class="fa fa-user"></i> Client Portal - <span *ngFor="let logedUser of logedUser">{{logedUser.firstName}} {{logedUser.lastName}}</span></h4>
+
+    <span class="spacer"></span>
+    <button [matMenuTriggerFor]="settingsmenu" matTooltip="Settings" class="manage-icon"
+      aria-label="Example icon-button with menu icon">
+      <mat-icon>settings</mat-icon>
+    </button>
+    <mat-menu #settingsmenu="matMenu" style="width: 250px;">
+      <button mat-menu-item>
+        <i class="fa-solid fa-moon"></i>&nbsp;&nbsp;&nbsp;
+        <span><mat-slide-toggle (change)="toggleDarkMode()" labelPosition="before" [checked]="isDarkMode"> Dark
+            Mode</mat-slide-toggle></span>
+      </button>
+      <button mat-menu-item (click)="logOff()">
+        <i class="fa-solid fa-sign-out"></i>&nbsp;&nbsp;&nbsp;
+        Log out
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container class="mat-cont" *ngIf="isLoggedIn">
+  <mat-sidenav #sidenav mode="side" opened="true" class="side-container">
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="'/dashboard'" class="mat-item">
+        <i class="fa-sharp fa-solid fa-home" style="color: rgb(38, 181, 112);"></i>
+        <span class="mr-3 float-end">Home</span>
+      </a>
+      <a mat-list-item [routerLink]="'/products'" class="mat-item">
+        <i class="fa-sharp fa-solid fa-box" style="color: rgb(222, 32, 70);"></i>
+        <span class="mr-3 float-end">Products</span>
+      </a>
+      <a mat-list-item [routerLink]="'/order'" class="mat-item">
+        <i class="fa-sharp fa-solid fa-home" style="color: rgb(81, 38, 181);"></i>
+        <span class="mr-3 float-end">Orders</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content-container">
+    <div class="router-outelet-div">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<router-outlet *ngIf="!isLoggedIn"></router-outlet>
