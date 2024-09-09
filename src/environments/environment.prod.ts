@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    //apiUrl: 'https://api/',
-    //mainDomainUrl: 'http://'
+    apiUrl: 'http://rsholdings-001-site3.ktempurl.com/api/',
+    mainDomainUrl: 'http://rsholdings-001-site3.ktempurl.com/api/'
 };

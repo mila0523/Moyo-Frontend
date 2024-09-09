@@ -1,5 +1,5 @@
 {
-  "name": "convee-admin",
+  "name": "client-portal",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
